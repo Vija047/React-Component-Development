@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/* Custom scrollbar for dark theme */
+.dark *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark *::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 4px;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
+/* Focus styles */
+@layer base {
+    * {
+        @apply focus:outline-none;
+    }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+}
